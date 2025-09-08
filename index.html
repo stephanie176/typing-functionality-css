@@ -4,9 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Typing Funcitonality with CSS</title>
+  <style>
+    :root {
+      --cursor-color: white;
+    }
+
+    .typing {
+      border-right: 1px solid var(--cursor-color);
+      animation: blinking 1s steps(1, end) infinite, typing 6s steps(40, end) infinite;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    @keyframes blinking {
+      0% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: var(--cursor-color);
+      }
+      100% {
+        border-color: transparent;
+      }
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+
+    body {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
-  <h1>My CHrome Extension DevCee is</h1>
+  <h1>My Chrome Extension DevCee is</h1>
   <div style="display: inline-block;">
     <h2 class="typing">Great at analyzing browser traffic</h2>
   </div>
